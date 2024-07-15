@@ -141,7 +141,7 @@ def build_dataset(is_train, test_mode, args):
             new_height=256,
             new_width=320,
             args=args)
-        nb_classes = 9
+        nb_classes = 6
 
     elif args.data_set == 'SSV2':
         dataset = RawFrameClsDataset(
