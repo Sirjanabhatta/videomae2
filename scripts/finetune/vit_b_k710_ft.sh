@@ -7,7 +7,7 @@ OUTPUT_DIR='/kaggle/working/videomae/checkpoints'
 DATA_PATH='/kaggle/input/cricshots-csvfiles/csv_cricshot'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
-MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
+# MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
 MODEL_PATH='/kaggle/input/videomae-epoch17/checkpoint-17.pth'
 
 JOB_NAME=$1
