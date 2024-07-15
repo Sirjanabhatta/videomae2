@@ -30,7 +30,7 @@ PY_ARGS=${@:2}
 #         --async \
 python run_class_finetuning.py \
         --model vit_base_patch16_224 \
-        --resume /kaggle/input/videomae-epoch17/checkpoint-17.pth
+        --resume /kaggle/input/videomae-epoch17/checkpoint-17.pth \
         --data_set Kinetics-710 \
         --nb_classes 9 \
         --data_path ${DATA_PATH} \
