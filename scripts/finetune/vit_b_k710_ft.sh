@@ -18,6 +18,7 @@ GPUS_PER_NODE=${GPUS_PER_NODE:-1}
 CPUS_PER_TASK=${CPUS_PER_TASK:-1}
 SRUN_ARGS=${SRUN_ARGS:-""}
 PY_ARGS=${@:2}
+# --resume /kaggle/input/videomae-epoch17/checkpoint-17.pth \
 
 # batch_size can be adjusted according to the graphics card
 # srun -p $PARTITION \
@@ -30,7 +31,6 @@ PY_ARGS=${@:2}
 #         --async \
 python run_class_finetuning.py \
         --model vit_base_patch16_224 \
-        # --resume /kaggle/input/videomae-epoch17/checkpoint-17.pth \
         --data_set Kinetics-710 \
         --nb_classes 6 \
         --data_path ${DATA_PATH} \
