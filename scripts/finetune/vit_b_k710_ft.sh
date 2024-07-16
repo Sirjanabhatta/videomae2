@@ -3,7 +3,7 @@ set -x
 export MASTER_PORT=$((12000 + $RANDOM % 20000))
 export OMP_NUM_THREADS=1
 
-OUTPUT_DIR='/kaggle/working/videomae/checkpoints'
+OUTPUT_DIR='/kaggle/working/videomae2/checkpoints'
 DATA_PATH='/kaggle/input/csv-cropbowl-9/csv_data'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
@@ -31,6 +31,7 @@ PY_ARGS=${@:2}
 #         --async \
 python run_class_finetuning.py \
         --model vit_base_patch16_224 \
+        --resume /kaggle/input/cropbowl-check2/checkpoint-2.pth \
         --data_set Kinetics-710 \
         --nb_classes 6 \
         --data_path ${DATA_PATH} \
