@@ -31,7 +31,7 @@ PY_ARGS=${@:2}
 #         --async \
 python run_class_finetuning.py \
         --model vit_base_patch16_224 \
-        --resume /kaggle/input/cropbowl-check2/checkpoint-2.pth \
+        # --resume /kaggle/input/cropbowl-check2/checkpoint-2.pth \
         --data_set Kinetics-710 \
         --nb_classes 3 \
         --data_path ${DATA_PATH} \
