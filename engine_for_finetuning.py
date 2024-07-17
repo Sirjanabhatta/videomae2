@@ -198,7 +198,8 @@ def validation_one_epoch(data_loader, model, device):
         
 
         
-        acc1, acc5 = accuracy(output, target, topk=(1, 5))
+        # acc1, acc5 = accuracy(output, target, topk=(1, 5))
+        acc1 = accuracy(output, target, topk=(1))
 
         batch_size = images.shape[0]
         metric_logger.update(loss=loss.item())
