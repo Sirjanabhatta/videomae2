@@ -53,7 +53,7 @@ def build_dataset(is_train, test_mode, args):
         anno_path = os.path.join(args.data_path, 'val.csv')
     else:
         mode = 'validation'
-        anno_path = os.path.join(args.data_path, 'test.csv')
+        anno_path = os.path.join(args.data_path, 'val.csv')
         print("vall fileee")
         # Count the number of rows in the CSV file
         with open(anno_path, mode='r') as file:
