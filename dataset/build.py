@@ -6,6 +6,7 @@
 # https://github.com/facebookresearch/dino
 # --------------------------------------------------------'
 import os
+import csv
 
 from .datasets import RawFrameClsDataset, VideoClsDataset
 from .pretrain_datasets import (  # noqa: F401
@@ -41,11 +42,12 @@ def build_dataset(is_train, test_mode, args):
         mode = 'train'
         anno_path = os.path.join(args.data_path, 'train.csv')
         print("csv file iss")
-        # Get the size of the file in bytes
-        file_size = os.path.getsize(anno_path)
+        # Count the number of rows in the CSV file
+        with open(anno_path, mode='r') as file:
+            reader = csv.reader(file)
+            row_count = sum(1 for row in reader)   # Subtract 1 to exclude the header row
 
-        # Print the size of the file in bytes
-        print(f'Size of the file: {file_size} bytes')
+        print(f'Number of rows in the file: {row_count}')
     elif test_mode:
         mode = 'test'
         anno_path = os.path.join(args.data_path, 'val.csv')
@@ -53,10 +55,12 @@ def build_dataset(is_train, test_mode, args):
         mode = 'validation'
         anno_path = os.path.join(args.data_path, 'val.csv')
         print("vall fileee")
-        file_size = os.path.getsize(anno_path)
+        # Count the number of rows in the CSV file
+        with open(anno_path, mode='r') as file:
+            reader = csv.reader(file)
+            row_count = sum(1 for row in reader)  # Subtract 1 to exclude the header row
 
-        # Print the size of the file in bytes
-        print(f'Size of the file: {file_size} bytes')
+        print(f'Number of rows in the file: {row_count}')
     if args.data_set == 'Kinetics-400':
         if not args.sparse_sample:
             dataset = VideoClsDataset(
