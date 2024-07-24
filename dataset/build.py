@@ -40,13 +40,23 @@ def build_dataset(is_train, test_mode, args):
     if is_train:
         mode = 'train'
         anno_path = os.path.join(args.data_path, 'train.csv')
+        print("csv file iss")
+        # Get the size of the file in bytes
+        file_size = os.path.getsize(anno_path)
+
+        # Print the size of the file in bytes
+        print(f'Size of the file: {file_size} bytes')
     elif test_mode:
         mode = 'test'
         anno_path = os.path.join(args.data_path, 'val.csv')
     else:
         mode = 'validation'
         anno_path = os.path.join(args.data_path, 'val.csv')
+        print("vall fileee")
+        file_size = os.path.getsize(anno_path)
 
+        # Print the size of the file in bytes
+        print(f'Size of the file: {file_size} bytes')
     if args.data_set == 'Kinetics-400':
         if not args.sparse_sample:
             dataset = VideoClsDataset(
