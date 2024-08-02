@@ -7,7 +7,7 @@ OUTPUT_DIR='/kaggle/working/videomae2/checkpoints'
 DATA_PATH='/kaggle/working/csv_data'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
-MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
+MODEL_PATH='/kaggle/working/vit_b_k710_dl_from_giant.pth'
 # MODEL_PATH='/kaggle/input/videomae-epoch17/checkpoint-17.pth'
 
 JOB_NAME=$1
@@ -32,8 +32,8 @@ PY_ARGS=${@:2}
 python run_class_finetuning.py \
         --model vit_base_patch16_224 \
         --data_set Kinetics-710 \
-        --nb_classes 3 \
-        --resume /kaggle/input/8th-check-videomae/checkpoint-8.pth \
+        --nb_classes 6 \
+        # --resume /kaggle/input/8th-check-videomae/checkpoint-8.pth \
         --data_path ${DATA_PATH} \
         --finetune ${MODEL_PATH} \
         --log_dir ${OUTPUT_DIR} \
