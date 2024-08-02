@@ -4,7 +4,7 @@ export MASTER_PORT=$((12000 + $RANDOM % 20000))
 export OMP_NUM_THREADS=1
 
 OUTPUT_DIR='/kaggle/working/videomae2/checkpoints'
-DATA_PATH='/kaggle/working/videomae2/csv_data'
+DATA_PATH='/kaggle/working/csv_data'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
 MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
