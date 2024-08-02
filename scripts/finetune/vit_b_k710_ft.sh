@@ -33,6 +33,7 @@ python run_class_finetuning.py \
         --model vit_base_patch16_224 \
         --data_set Kinetics-710 \
         --nb_classes 6 \
+        --data_root /kaggle/input/cricket-bowling/corrected_all_data/corrected_all_data \
         --data_path ${DATA_PATH} \
         --finetune ${MODEL_PATH} \
         --log_dir ${OUTPUT_DIR} \
