@@ -4,7 +4,7 @@ export MASTER_PORT=$((12000 + $RANDOM % 20000))
 export OMP_NUM_THREADS=1
 
 OUTPUT_DIR='/kaggle/working/videomae2/checkpoints'
-DATA_PATH='/kaggle/input/overall-data/csv_files'
+DATA_PATH='/kaggle/input/6class-csv/data_csv _videomae'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
 MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
@@ -33,7 +33,6 @@ python run_class_finetuning.py \
         --model vit_base_patch16_224 \
         --data_set Kinetics-710 \
         --nb_classes 3 \
-        --resume /kaggle/input/8th-check-videomae/checkpoint-8.pth \
         --data_path ${DATA_PATH} \
         --finetune ${MODEL_PATH} \
         --log_dir ${OUTPUT_DIR} \
