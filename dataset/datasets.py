@@ -628,7 +628,7 @@ def spatial_sampling(
     min_scale=256,
     max_scale=320,
     crop_size=224,
-    random_horizontal_flip=True,
+    random_horizontal_flip=False,
     inverse_uniform_sampling=False,
     aspect_ratio=None,
     scale=None,
