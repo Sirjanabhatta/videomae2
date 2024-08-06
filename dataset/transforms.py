@@ -236,7 +236,7 @@ class GroupRandomHorizontalFlip(object):
     """Randomly horizontally flips the given PIL.Image with a probability of 0.5
     """
 
-    def __init__(self, selective_flip=True, is_flow=False):
+    def __init__(self, selective_flip=False, is_flow=False):
         self.is_flow = is_flow
         self.class_LeftRight = [86, 87, 93, 94, 166, 167
                                 ] if selective_flip else []

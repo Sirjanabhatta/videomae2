@@ -779,7 +779,7 @@ def transforms_imagenet_train(
     img_size=224,
     scale=None,
     ratio=None,
-    hflip=0.5,
+    hflip=0.0,
     vflip=0.0,
     color_jitter=0.4,
     auto_augment=None,
