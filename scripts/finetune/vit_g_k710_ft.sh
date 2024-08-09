@@ -37,7 +37,7 @@ OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=${GPUS_PER
         --finetune ${MODEL_PATH} \
         --log_dir ${OUTPUT_DIR} \
         --output_dir ${OUTPUT_DIR} \
-        --batch_size 3 \
+        --batch_size 8 \
         --input_size 224 \
         --short_side_size 224 \
         --save_ckpt_freq 10 \
