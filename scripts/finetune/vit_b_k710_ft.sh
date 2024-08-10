@@ -4,10 +4,10 @@ export MASTER_PORT=$((12000 + $RANDOM % 20000))
 export OMP_NUM_THREADS=1
 
 OUTPUT_DIR='/kaggle/working/videomae2/checkpoints'
-DATA_PATH='/kaggle/input/6class-1561/1561_csv'
+DATA_PATH='/kaggle/input/6classes-csvfile/data_csv_videomae'
 # DATA_PATH='/kaggle/input/csv-files-for-cricshot/crichotcsv'
 
-MODEL_PATH='/kaggle/input/vitbase/vit_b_k710_dl_from_giant.pth'
+MODEL_PATH='/kaggle/working/vit_b_k710_dl_from_giant.pth'
 # MODEL_PATH='/kaggle/input/videomae-epoch17/checkpoint-17.pth'
 
 JOB_NAME=$1
@@ -42,6 +42,7 @@ python run_class_finetuning.py \
         --short_side_size 224 \
         --save_ckpt_freq 3 \
         --num_frames 16 \
+        --resume /kaggle/working/checkpoint-17.pth \
         --sampling_rate 4 \
         --num_sample 2 \
         --num_workers 10 \
