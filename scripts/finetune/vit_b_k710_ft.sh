@@ -42,7 +42,6 @@ python run_class_finetuning.py \
         --short_side_size 224 \
         --save_ckpt_freq 3 \
         --num_frames 16 \
-        --resume /kaggle/working/checkpoint-17.pth \
         --sampling_rate 4 \
         --num_sample 2 \
         --num_workers 10 \
